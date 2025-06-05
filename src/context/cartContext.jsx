@@ -9,6 +9,6 @@ export function CartProvider({ children }) {
   return <menuContext value={[cart, setCart]}>{children}</menuContext>;
 }
 
-export function useMenuContext() {
+export function useCartContext() {
   return useContext(cartContext);
 }

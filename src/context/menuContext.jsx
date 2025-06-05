@@ -7,7 +7,11 @@ const menuContext = createContext();
 export function MenuProvider({ children }) {
   const [menu, setMenu] = useState(data.menu);
 
-  return <menuContext value={[menu, setMenu]}>{children}</menuContext>;
+  return (
+    <menuContext.Provider value={[menu, setMenu]}>
+      {children}
+    </menuContext.Provider>
+  );
 }
 
 export function useMenuContext() {

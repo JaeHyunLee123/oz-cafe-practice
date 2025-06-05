@@ -6,7 +6,11 @@ const cartContext = createContext();
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
-  return <menuContext value={[cart, setCart]}>{children}</menuContext>;
+  return (
+    <cartContext.Provider value={[cart, setCart]}>
+      {children}
+    </cartContext.Provider>
+  );
 }
 
 export function useCartContext() {
